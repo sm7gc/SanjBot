@@ -1,0 +1,7 @@
+[{
+    "Pick a letter": ["A", "B", "C"]
+}, {
+    "Pick a number": ["1", "2", "3"]
+}, {
+    "Pick an animal": ["cat", "dog", "bird"]
+}]
