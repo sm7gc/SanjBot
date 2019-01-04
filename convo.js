@@ -3,13 +3,13 @@ var botui = new BotUI('bot');
 function init() {
 
     var protocol;
-    $.getJSON("protocol.json", function (data) {
+    $.getJSON("phq.json", function (data) {
         protocol = data;
     });
 
     botui.message.bot({
         delay: 700,
-        content: 'TEST SURVEY'
+        content: 'Welcome to SanjBot. The current survey protcol is modeled after the PHQ-9'
     }).then(function () {
         survey(protocol, 0);
     });
@@ -33,14 +33,12 @@ function parseObj(obj) {
 }
 
 function survey(protocol, i) {
-    console.log(Object.keys(protocol).length);
     if (i >= Object.keys(protocol).length) {
         done();
         return;
     }
 
     var curr = parseObj(protocol[i]);
-    console.log(curr);
 
     botui.message.bot({
             delay: 500,
@@ -51,13 +49,14 @@ function survey(protocol, i) {
                 delay: 1000,
                 action: curr.options
             })
-        }).then(function (res) {
-            return botui.message.bot({
-                delay: 1500,
-                loading: true, // pretend like we are doing something
-                content: 'You selected: ' + res.value
-            });
         })
+        //        .then(function (res) {
+        //            return botui.message.bot({
+        //                delay: 1500,
+        //                loading: true, // pretend like we are doing something
+        //                content: 'You selected: ' + res.value
+        //            });
+        //        })
         .then(function () {
             survey(protocol, i + 1);
         });
