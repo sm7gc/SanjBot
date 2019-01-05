@@ -3,7 +3,8 @@ var botui = new BotUI('bot');
 function init() {
 
     var protocol;
-    $.getJSON("phq.json", function (data) {
+    $.getJSON("../protocol/phq.json", function (data) {
+        console.log(data);
         protocol = data;
     });
 
@@ -33,9 +34,6 @@ function init() {
             });
         })
     });
-    //        .then(function () {
-    //        surveyText(protocol, 0);
-    //    });
 }
 
 function parseObj(obj) {
