@@ -1,6 +1,6 @@
 var botui = new BotUI('bot');
 
-var socket = io.connect('http://localhost:8010');
+var socket = io.connect('https://sanjbot.herokuapp.com:8010');
 
 botui.message.add({
     content: 'Lets Start Talking...',
