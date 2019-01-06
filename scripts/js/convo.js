@@ -14,11 +14,10 @@ botui.message.add({
             placeholder: 'Say Hello',
         }
     }).then(function (res) {
-        console.log(res.value);
         socket.emit('fromClient', {
             client: res.value
         }); // sends the message typed to server
-        //        console.log(res.value); // will print whatever was typed in the field.
+        console.log(res.value); // will print whatever was typed in the field.
     }).then(function () {
         socket.on('fromServer', function (data) { // recieving a reply from server.
             console.log(data.server);
