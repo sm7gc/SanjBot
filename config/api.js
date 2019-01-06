@@ -21,10 +21,10 @@ var getRes = function (query) {
     return responseFromAPI;
 };
 
-//// test the command :
-//getRes('hello').then(function (res) {
-//    console.log(res)
-//});
+// test the command :
+getRes('hello').then(function (res) {
+    console.log(res)
+});
 
 module.exports = {
     getRes
