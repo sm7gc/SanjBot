@@ -1,7 +1,7 @@
 var botui = new BotUI('bot');
 
-//var socket = io.connect('http://sanjbot.herokuapp.com:8010');
-var socket = io.connect(window.location.hostname + ':8010');
+var socket = io.connect('http://localhost:8010');
+//var socket = io.connect(window.location.hostname + ':8010');
 
 console.log(socket);
 

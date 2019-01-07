@@ -2,18 +2,13 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-//io.configure(function () {
-//    io.set("transports", ["xhr-polling"]);
-//    io.set("polling duration", 10);
-//});
-
-
 var api = require('./api');
 
 var conn = function () {
     //    var port = process.env.PORT || 5000;
-    server.listen(8010);
     //    server.listen(port);
+
+    server.listen(8010);
 
     app.get('/', function (req, res) {
         res.sendfile(__dirname + '/index.html');
